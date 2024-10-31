@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.cube-container {
+    perspective: 1200px;
+}
+
+.cube {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    animation: rotateCube 5s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Colors and positions for each face */
+.face-descrie {
+    background-color: red;
+    transform: rotateY(0deg) translateZ(175px);
+}
+
+.face-compara {
+    background-color: blue;
+    transform: rotateY(90deg) translateZ(175px);
+}
+
+.face-asociaza {
+    background-color: purple;
+    transform: rotateY(180deg) translateZ(175px);
+}
+
+.face-analizeaza {
+    background-color: green;
+    transform: rotateY(-90deg) translateZ(175px);
+}
+
+.face-aplica {
+    background-color: orange;
+    transform: rotateX(90deg) translateZ(175px);
+    writing-mode: vertical-lr;
+}
+
+.face-argumenteaza {
+    background-color: gray;
+    transform: rotateX(-90deg) translateZ(175px);
+    writing-mode: vertical-lr;
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
